@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/Assets/css/styles.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> <!-- Add Font Awesome -->
+</head>
+<body>
+
+  <div class="overlay" id="overlay">
+    <div class="proceed-button" onclick="removeOverlay(); playMusic()">♱ >_< ♱</div>
+  </div>
+
+  <div id="clock"></div>
+    
+  <div id="content">
+    <a id="name">Dahood.cc</a>
+    <details id="Members">
+      <summary>Members</summary>
+      <div class="dropdown-content">
+        <a href="https://dahood.cc/discord/"><i class="fab fa-discord"></i> /Debit</a>
+        <a href="https://dahood.cc/users/"><i class="fa-solid fa-globe"></i> Users</a> 
+      </div>
+    </details>
+  </div>  
+
+  <div id="snow"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+      script.onload = function(){
+        particlesJS("snow", {
+          "particles": {
+            "number": {
+              "value": 10,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#880808"
+            },
+            "opacity": {
+              "value": 0.7,
+              "random": false,
+              "anim": {
+                "enable": false
+              }
+            },
+            "size": {
+              "value": 2.3,
+              "random": true,
+              "anim": {
+                "enable": false
+              }
+            },
+            "line_linked": {
+              "enable": false
+            },
+            "move": {
+              "enable": true,
+              "speed": 5,
+              "direction": "bottom",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": true,
+                "rotateX": 300,
+                "rotateY": 1200
+              }
+            },
+            "interactivity": {
+              "events": {
+                "onhover": {
+                  "enable": false
+                },
+                "onclick": {
+                  "enable": false
+                },
+                "resize": false
+              }
+            },
+            "retina_detect": true
+          }
+        });
+      }
+      document.head.append(script);
+    });
+  </script> 
+
+<script src="/Assets/js/List.js"></script>
+
+  <script>
+    function removeOverlay() {
+      var overlay = document.getElementById("overlay");
+      overlay.style.display = "none";
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const options = {
+        hour12: true,
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      const formattedTime = now.toLocaleTimeString('en-US', options);
+      document.getElementById('clock').textContent = formattedTime;
+    }
+
+    setInterval(updateClock, 1000);
+  </script>
+
+  <script>
+    function playMusic() {
+      var audio = new Audio('dahoodcc.mp3');
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
